@@ -1,0 +1,43 @@
+﻿<Window x:Class="matricos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:matricos"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="10">
+            <TextBlock Text="Matrix A" FontSize="16" FontWeight="Bold" Margin="5"/>
+            <DataGrid x:Name="MatrixA" AutoGenerateColumns="True" Height="200"
+                      CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" ColumnWidth="*"/>
+            <Button Content="Add Row to Matrix A" Click="AddRowToMatrixA" Margin="5"/>
+            <Button Content="Add Column to Matrix A" Click="AddColumnToMatrixA" Margin="5"/>
+            <Button Content="Reset Matrices" Click="ResetMatrices" Margin="5"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="10">
+            <TextBlock Text="Matrix B" FontSize="16" FontWeight="Bold" Margin="5"/>
+            <DataGrid x:Name="MatrixB" AutoGenerateColumns="True"
+                      Height="200" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" ColumnWidth="*"/>
+            <Button Content="Add Row to Matrix B" Click="AddRowToMatrixB" Margin="5"/>
+            <Button Content="Add Column to Matrix B" Click="AddColumnToMatrixB" Margin="5"/>
+            <Button Content="Randomize Matrices" Click="RandomizeMatrices" Margin="5" Grid.Column="1"/>
+        </StackPanel>
+
+
+
+
+        <Button Grid.ColumnSpan="2" Content="Multiply Matrices without multithreading" Click="MultiplyMatrices" VerticalAlignment="Bottom" Height="30" Margin="10"/>
+        <Button Grid.ColumnSpan="2" Content="Multiply Matrices with multithreading" Click="MultiplyMatricesMulti" VerticalAlignment="Bottom" Height="30" Margin="10,0,10,45"/>
+
+    </Grid>
+
+</Window>
